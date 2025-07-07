@@ -1,32 +1,43 @@
-/*
-Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
-Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
-*/
-/* 
-    Created on : 24 abr. 2025, 17:22:07
-    Author     : PorrasPoma
-*/
-
+/* ---------- ESTILO GLOBAL ---------- */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-/* Estilo general */
+
 body {
-  font-family: 'Roboto', Arial, sans-serif;
-  line-height: 1.6;
-  background-color: #f9f9f9;
+  font-family: 'Roboto', sans-serif;
+  background-color: #f0f4fa;
   color: #333;
   scroll-behavior: smooth;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
-/* Header */
+
+main {
+  flex: 1;
+  padding: 40px 20px;
+}
+
+/* ---------- CONTENEDOR CENTRAL ---------- */
+.contenido-central {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 30px;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+/* ---------- HEADER ---------- */
 header {
-  background-color: #004aad;
-  color: #fff;
+  background-color: #002f6c;
+  color: white;
   padding: 15px 0;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
+
 header nav {
   display: flex;
   justify-content: space-between;
@@ -35,124 +46,80 @@ header nav {
   margin: 0 auto;
   padding: 0 20px;
 }
-header nav .nav-center,
-header nav .nav-right {
-  list-style: none;
+
+header nav ul {
   display: flex;
+  list-style: none;
+  gap: 20px;
   align-items: center;
 }
-header nav .nav-center {
-  flex-grow: 1;
-  justify-content: center;
-}
-header nav .nav-center li {
-  margin: 0 15px;
-}
-header nav .nav-center li a {
-  color: #fff;
+
+header nav li a {
+  color: white;
+  font-weight: 600;
   text-decoration: none;
   padding: 8px 15px;
-  border-radius: 5px;
-  transition: background-color 0.3s ease-in-out, transform 0.2s;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
 }
-header nav .nav-center li a:hover {
-  background-color: #0353a4;
-  transform: scale(1.1);
+
+header nav li a:hover {
+  background-color: #01427c;
 }
-header nav .nav-left {
-  list-style: none;
-  display: flex;
-  align-items: center;
-  margin-right: auto;
-}
-header nav .nav-right li a {
-  color: #fff;
-  text-decoration: none;
-  padding: 8px 15px;
-  border: 1px solid #fff;
-  border-radius: 5px;
-  transition: all 0.3s ease-in-out;
-}
-header nav .nav-right li a:hover {
-  background-color: #fff;
-  color: #004aad;
-}
-/* Botón flotante de ayuda */
+
+/* ---------- BOTÓN FLOTANTE AYUDA ---------- */
 .btn-ayuda {
   position: fixed;
   bottom: 20px;
   right: 20px;
   background-color: #ff6f61;
-  color: #fff;
+  color: white;
   padding: 15px 20px;
   border-radius: 50%;
-  text-align: center;
-  text-decoration: none;
   font-size: 18px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  transition: background-color 0.3s, transform 0.2s;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
   z-index: 1000;
+  text-align: center;
   animation: bounce 2s infinite;
+  text-decoration: none;
+  transition: transform 0.3s ease;
 }
+
 .btn-ayuda:hover {
   background-color: #ff412e;
-  transform: rotate(360deg);
+  transform: scale(1.1);
 }
-/* Animación del botón */
+
 @keyframes bounce {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
 }
-/* Pie de página */
+
+/* ---------- FOOTER PEGADO ABAJO ---------- */
 footer {
-  background-color: #004aad;
+  background-color: #002f6c;
   color: #fff;
-  padding: 10px;
   text-align: center;
-  margin-top: 20px;
+  padding: 15px;
   font-size: 14px;
+  margin-top: auto;
 }
-/* Estilos responsivos */
+
+/* ---------- RESPONSIVO ---------- */
 @media (max-width: 768px) {
   header nav {
     flex-direction: column;
-    align-items: center;
+    gap: 10px;
   }
-  header nav .nav-center,
-  header nav .nav-right {
-    flex-direction: column;
-  }
-  header nav .nav-center li,
-  header nav .nav-right li {
-    margin: 5px 0;
-  }
-  .btn-ayuda {
-    padding: 10px 15px;
-    font-size: 16px;
-  }
-}
-@media (max-width: 480px) {
-  body {
-    font-size: 14px;
-  }
-  header nav {
-    padding: 0 10px;
-  }
-  header nav .nav-center li {
-    margin: 10px 0;
-  }
-  .btn-ayuda {
-    bottom: 15px;
-    right: 15px;
-    padding: 10px;
-    font-size: 14px;
-  }
-}
 
+  header nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .contenido-central {
+    padding: 20px;
+  }
+}
 
 

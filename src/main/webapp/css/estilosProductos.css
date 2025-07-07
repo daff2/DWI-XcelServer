@@ -1,111 +1,149 @@
-body {
-    font-family: 'Segoe UI', sans-serif;
-    background-color: #f8f8f8;
-    margin: 0;
-    padding: 0;
+/* ---------- CONTENEDOR GENERAL ---------- */
+.contenedor-principal {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  box-sizing: border-box;
 }
 
-.categorias {
-    background-color: #fff;
-    padding: 15px;
-    margin: 20px auto;
-    width: 90%;
-    border-radius: 8px;
-    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+/* ---------- SECCIÓN PRODUCTOS ---------- */
+.seccion-productos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
 }
 
-.categorias ul {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 15px;
+/* ---------- FORMULARIO DE BÚSQUEDA ---------- */
+#buscar-productos {
+  width: 100%;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  padding: 40px;
+  text-align: center;
 }
 
-.categorias li {
-    display: inline;
+#buscar-productos h2 {
+  font-size: 28px;
+  color: #004aad;
+  margin-bottom: 25px;
 }
 
-.categorias a {
-    text-decoration: none;
-    color: #333;
-    font-weight: bold;
-    background-color: #e0e0e0;
-    padding: 8px 15px;
-    border-radius: 20px;
-    transition: all 0.3s ease;
+.form-busqueda {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
 }
 
-.categorias a:hover {
-    background-color: #2196f3;
-    color: #fff;
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
 }
 
-.container-productos {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding: 30px;
-    gap: 25px;
+.form-group input,
+.form-group select {
+  padding: 12px 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  width: 250px;
+  font-size: 16px;
 }
 
-.card-producto {
-    background-color: #fff;
-    width: 250px;
-    border-radius: 12px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    text-align: center;
-    padding: 20px;
-    transition: transform 0.2s ease;
+/* ---------- LISTA DE PRODUCTOS ---------- */
+#lista-productos {
+  width: 100%;
+  text-align: center;
 }
 
-.card-producto:hover {
-    transform: translateY(-5px);
+#lista-productos h2 {
+  font-size: 28px;
+  color: #004aad;
+  margin-bottom: 25px;
 }
 
-.card-producto img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    border-radius: 8px;
-    background-color: #f4f4f4;
-    margin-bottom: 10px;
+.productos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  justify-items: center;
+  padding: 0 10px;
 }
 
-.card-producto h3 {
-    font-size: 18px;
-    color: #333;
-    margin: 10px 0 5px;
+.producto-item {
+  background-color: #fefefe;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  width: 100%;
+  max-width: 280px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease;
 }
 
-.card-producto .descripcion {
-    font-size: 14px;
-    color: #777;
-    margin: 5px 0 10px;
-    height: 40px;
-    overflow: hidden;
+.producto-item:hover {
+  transform: translateY(-5px);
 }
 
-.card-producto .precio {
-    font-size: 20px;
-    color: #27ae60;
-    font-weight: bold;
-    margin: 10px 0;
-}
-
+/* ---------- BOTÓN PRINCIPAL Y GENERAL ---------- */
+button,
 .btn-agregar {
-    background-color: #2196f3;
-    color: white;
-    border: none;
-    padding: 10px 18px;
-    border-radius: 20px;
-    cursor: pointer;
-    font-size: 14px;
-    transition: background-color 0.3s ease;
+  background-color: #004aad;
+  color: white;
+  padding: 12px 18px;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
+button:hover,
 .btn-agregar:hover {
-    background-color: #0d8ae5;
+  background-color: #012f72;
+  transform: scale(1.05);
 }
 
+/* ---------- BOTÓN DE AYUDA FLOTANTE ---------- */
+.btn-ayuda {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #ff6f61;
+  color: white;
+  padding: 15px 20px;
+  border-radius: 50%;
+  font-size: 18px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  z-index: 1000;
+  transition: transform 0.3s ease;
+  animation: bounce 2s infinite;
+  text-decoration: none;
+  text-align: center;
+}
+
+.btn-ayuda:hover {
+  background-color: #ff412e;
+  transform: scale(1.1);
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* ---------- RESPONSIVO ---------- */
+@media (max-width: 600px) {
+  .form-busqueda {
+    flex-direction: column;
+  }
+
+  .form-group input,
+  .form-group select {
+    width: 100%;
+  }
+}
