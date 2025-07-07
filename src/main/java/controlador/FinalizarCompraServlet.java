@@ -12,7 +12,7 @@ import jakarta.servlet.http.HttpSession;
 
 import modelo.Producto;
 
-@WebServlet("/FinalizarCompraServlet")
+
 public class FinalizarCompraServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)

@@ -7,6 +7,8 @@
     String usuario = (String) session.getAttribute("usuario");
     String rol = (String) session.getAttribute("rol");
 %>
+
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -41,24 +43,27 @@
                     <li><a href="pedidos.jsp">PEDIDOS</a></li>
                     <li><a href="reporte.jsp">REPORTE</a></li>
                    <li><a href="usuarios.jsp">USUARIOS</a></li>
-                    <li><a href="almacen.jsp">ALMACÉN</a></li>
+                    <li><a href="almacen.jsp">ALMACÃ‰N</a></li>
                 <% } %>
                 <li><a href="ajustes.jsp">AJUSTES</a></li>
             <% } %>
         </ul>
             <ul class="nav-right">
                     <% if (usuario == null) { %>
-                    <li><a href="login.jsp">INICIAR SESIÓN</a></li>
+                    <li><a href="login.jsp">INICIAR SESIÃ“N</a></li>
                         <% } else { %>
-                    <li><a href="LogoutServlet">CERRAR SESIÓN</a></li>
+                    <li><a href="LogoutServlet">CERRAR SESIÃ“N</a></li>
                         <% } %>
             </ul>
         </nav>
     </header>
 
-    <!-- Sección de productos y búsqueda -->
-    <section id="productos-busqueda">
-        <!-- Formulario de búsqueda -->
+    <!-- SecciÃ³n de productos y bÃºsqueda -->
+    <main class="contenido-central">
+    <section id="productos-busqueda" class="seccion-productos">
+        
+        <section id="productos-busqueda">
+        <!-- Formulario de bÃºsqueda -->
         <div id="buscar-productos">
             <h2>BUSCAR PRODUCTO</h2>
             <form action="ProductosServlet" method="get" class="form-busqueda">
@@ -68,7 +73,7 @@
                     <input type="text" id="nombre" name="buscarNombre" placeholder="Buscar por nombre" />
                 </div>
                 <div class="form-group">
-                    <label for="categoria">Categoría:</label>
+                    <label for="categoria">CategorÃ­a:</label>
                     <select id="categoria" name="buscarCategoria">
                         <option value="">Todas</option>
                     </select>
@@ -77,7 +82,7 @@
             </form>
         </div>
 
-        <!-- Sección de productos -->
+        <!-- SecciÃ³n de productos -->
         <div id="lista-productos">
             <h2>PRODUCTOS</h2>
             <div class="productos-grid">
@@ -97,7 +102,10 @@
         </div>
     </section>
 
-    <button onclick="window.location.href='contacto.jsp'" class="btn-ayuda">¿Necesitas ayuda?</button>
+    </section>
+    </main>
+    
+    <button onclick="window.location.href='contacto.jsp'" class="btn-ayuda">Â¿Necesitas ayuda?</button>
 
     <footer>
         <p>&copy; 2025 XCEL_SERVER. Todos los derechos reservados.</p>

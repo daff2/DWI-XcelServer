@@ -1,0 +1,23 @@
+import { UserDAO } from "../dao/UserDAO.js";
+
+export class UserController {
+  constructor() {
+    this.userDao = new UserDAO();
+  }
+
+  listUsers() {
+    return this.userDao.getAllUsers();
+  }
+
+  addUser(nombre, email, rol) {
+    return this.userDao.createUser(nombre, email, rol);
+  }
+
+  editUser(id, nombre, email, rol) {
+    return this.userDao.updateUser(id, nombre, email, rol);
+  }
+
+  removeUser(id) {
+    this.userDao.deleteUser(id);
+  }
+}

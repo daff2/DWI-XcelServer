@@ -13,7 +13,7 @@ import jakarta.servlet.http.HttpSession;
 
 import modelo.Producto;
 
-@WebServlet("/EliminarDelCarritoServlet")
+
 public class EliminarDelCarritoServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)

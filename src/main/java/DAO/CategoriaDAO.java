@@ -1,8 +1,10 @@
-package modelo;
+package DAO;
 
+import conexion.conexion;
 import java.sql.*;
 import java.util.*;
-import util.conexion;
+import modelo.Categoria;
+
 
 public class CategoriaDAO {
 
@@ -10,14 +12,14 @@ public class CategoriaDAO {
         List<Categoria> lista = new ArrayList<>();
         String sql = "SELECT * FROM categoria";
 
-        try (Connection con = conexion.getConnection();
+        try (Connection con = conexion.conectar();
              PreparedStatement ps = con.prepareStatement(sql);
              ResultSet rs = ps.executeQuery()) {
 
             while (rs.next()) {
                 Categoria cat = new Categoria();
                 cat.setId(rs.getInt("ID"));
-                cat.setNombre(rs.getString("CATEGORIA"));
+                cat.setCategoria(rs.getString("CATEGORIA"));
                 lista.add(cat);
             }
 
@@ -28,3 +30,4 @@ public class CategoriaDAO {
         return lista;
     }
 }
+
